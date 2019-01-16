@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function populate(s1,s2){
+	var s1 = document.getElementById(s1);
+	var s2 = document.getElementById(s2);
+   // s2.innerHTML = "";
+    
+    var variabl_1  = "Red";
+    var variabl_2  = "Green";
+    var variabl_3 = "Blue";
+
+	if(s1.value == variabl_1){
+        var optionArray = ["|","Green|Green","Blue|Blue"];
+        document.getElementById('div1').style.backgroundColor = 'Red';
+        document.getElementById('div3').style.backgroundColor = 'Red';
+        document.getElementById('div5').style.backgroundColor = 'Red';
+        document.getElementById("slct1").style.visibility = "hidden";
+    }
+     else if(s1.value == variabl_2){
+        var optionArray = ["|","Red|Red","Blue|Blue"];
+        document.getElementById('div2').style.backgroundColor = 'Green';
+        document.getElementById('div7').style.backgroundColor = 'Green';
+        document.getElementById('div9').style.backgroundColor = 'Green';
+        document.getElementById("slct1").style.visibility = "hidden";
+	} else if(s1.value == variabl_3){
+        var optionArray = ["|","Red|Red","Green|Green"];
+        document.getElementById('div4').style.backgroundColor = 'Blue';
+        document.getElementById('div6').style.backgroundColor = 'Blue';
+        document.getElementById('div8').style.backgroundColor = 'Blue';
+        document.getElementById("slct1").style.visibility = "hidden";
+    }
+
+         
+ 
+	for(var option in optionArray){
+		var pair = optionArray[option].split("|");
+		var newOption = document.createElement("option");
+		newOption.value = pair[0];
+		newOption.innerHTML = pair[1];
+        s2.options.add(newOption);
+    
+    }
+}
+
+</script>
+
+<style>
+
+            .color1{
+            width: 320px;
+            padding: 10px;
+            border: 5px solid gray;
+            margin: 0; 
+
+        }
+        .color2{
+            width: 320px;
+            margin-left:26%;
+            padding: 10px;
+            border: 5px solid gray;
+            margin-top: -3.55%;
+           
+        }
+        .color3{
+            width: 320px;
+            margin-left:52%;
+            padding: 10px;
+            border: 5px solid gray;
+            margin-top: -3.55%;
+           
+
+        }
+        .color4{
+            width: 320px;
+            padding: 10px;
+            border: 5px solid gray;
+            margin: 0; 
+
+
+        }
+        .color5{
+            width: 320px;
+            margin-left:26%;
+            padding: 10px;
+            border: 5px solid gray;
+            margin-top: -3.55%;
+           
+
+        }
+        .color6{
+            width: 320px;
+            margin-left:52%;
+            padding: 10px;
+            border: 5px solid gray;
+            margin-top: -3.55%;
+
+        }
+        .color7{
+            width: 320px;
+            padding: 10px;
+            border: 5px solid gray;
+            margin: 0; 
+
+        }
+        .color8{
+            width: 320px;
+            margin-left:26%;
+            padding: 10px;
+            border: 5px solid gray;
+            margin-top: -3.55%;
+            }
+        .color9{
+            width: 320px;
+            margin-left:52%;
+            padding: 10px;
+            border: 5px solid gray;
+            margin-top: -3.55%;
+        }
+    </style>
+
+</head>
+<body>
+<h2>Graph Coloring Problem (CSP)</h2>
+<hr />
+Choose Color For Domain:
+<select id="slct1" name="slct1" onchange="populate(this.id,'slct2')">
+  <option value=""></option>
+  <option value="Red">Red</option>
+  <option value="Green">Green</option>
+  <option value="Blue">Blue</option>
+</select><hr />
+Choose Color For Domain
+<select id="slct2" name="slct2"  onchange="populate(this.id,'slct3')"  >
+     
+      </select>
+
+<hr />
+
+<div class="color1" id="div1"> 
+        Domain 1
+      </div>
+      <div class="color2" id="div2"> 
+              Domain 2
+            </div>
+            <div class="color3" id="div3"> 
+                  Domain 3
+                </div>
+                <div class="color4" id="div4"> 
+                        Domain 4
+                    </div><div class="color5" id="div5"> 
+                            Domain 5
+                        </div><div class="color6" id="div6"> 
+                                Domain 6
+                          </div>
+                      </div><div class="color7" id="div7"> 
+                            Domain 7
+                      </div>
+                      </div><div class="color8" id="div8"> 
+                            Domain 8
+                          </div>
+                      </div><div class="color9" id="div9"> 
+                            Domain 9
+                          </div>
+                      </div>
+                  
+
+</body>
+</html>
